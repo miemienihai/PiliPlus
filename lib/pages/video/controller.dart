@@ -343,6 +343,7 @@ class VideoDetailController extends GetxController
       vsync: this,
       initialIndex: Pref.defaultShowComment ? 1 : 0,
     );
+    toAudioPage();
   }
 
   Future<void> getMediaList({
