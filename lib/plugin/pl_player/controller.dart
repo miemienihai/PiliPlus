@@ -204,7 +204,7 @@ class PlPlayerController {
   bool isMuted = false;
 
   /// 听视频
-  late final RxBool onlyPlayAudio = false.obs;
+  late final RxBool onlyPlayAudio = true.obs;
 
   /// 镜像
   late final RxBool flipX = false.obs;
