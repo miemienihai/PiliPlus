@@ -1129,7 +1129,7 @@ class VideoDetailController extends GetxController
       return playerInit();
     }
   }
-
+  bool _audioPageNavigated = false;
   Future<void> playerInit({
     String? video,
     String? audio,
@@ -1202,7 +1202,11 @@ class VideoDetailController extends GetxController
     }
 
     defaultST = null;
+    
+  if (plPlayerController.onlyPlayAudio.value && !_audioPageNavigated) {
+    _audioPageNavigated = true;
     toAudioPage();
+  }
   }
 
   bool isQuerying = false;
@@ -1660,6 +1664,7 @@ class VideoDetailController extends GetxController
 
   @override
   void onClose() {
+    _audioPageNavigated = false;
     cancelSkipTimer();
     positionSubscription?.cancel();
     positionSubscription = null;
