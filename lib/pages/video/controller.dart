@@ -1138,6 +1138,7 @@ class VideoDetailController extends GetxController
     bool? autoplay,
     Volume? volume,
   }) async {
+    plPlayerController.onlyPlayAudio.value = true;
     final onlyPlayAudio = plPlayerController.onlyPlayAudio.value;
     await plPlayerController.setDataSource(
       DataSource(
@@ -1201,6 +1202,7 @@ class VideoDetailController extends GetxController
     }
 
     defaultST = null;
+    toAudioPage();
   }
 
   bool isQuerying = false;
